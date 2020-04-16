@@ -7,7 +7,7 @@ var user = document.getElementById('userName');
 var score = document.getElementById('scores');
 var scoreline = document.getElementById('score-line');
 
-document.getElementById('start').addEventListener("click", function(event) {
+document.getElementById('start').addEventListener("click", function want(event) {
   event.preventDefault();
   play = 0;
   compScore = 0;
@@ -45,6 +45,8 @@ document.getElementById('start').addEventListener("click", function(event) {
       if (play === 5) {
         gameOver();
         begin();
+      } else if (play > 5) {
+        alert('Restart Page');
       }
     });
 
@@ -70,6 +72,8 @@ document.getElementById('start').addEventListener("click", function(event) {
       if (play === 5) {
         gameOver();
         begin();
+      } else if (play > 5) {
+        alert('Restart Page');
       }
 
 
@@ -101,12 +105,17 @@ document.getElementById('start').addEventListener("click", function(event) {
         gameOver();
         begin();
       }
+
+      else if (play > 5) {
+        alert('Restart Page');
+      }
     });
 
     function gameOver() {
       play = 0;
       let real = chooseWinner (compScore, userScore);
       displayScores(real);
+      document.getElementById('final').innerHTML = 'Thanks for playing';
     }
 
     function chooseWinner (compScore, userScore) {
@@ -170,5 +179,8 @@ document.getElementById('start-game').addEventListener("click", function() {
   document.getElementById('start').style.display = 'block';
   score.innerHTML = '';
   scoreline.innerHTML = '';
+  document.getElementById('start-game').style.display = 'none';
 
 })
+
+console.log(play);
