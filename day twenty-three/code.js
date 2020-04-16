@@ -9,6 +9,7 @@ var scoreline = document.getElementById('score-line');
 
 document.getElementById('start').addEventListener("click", function(event) {
   event.preventDefault();
+  play = 0;
   compScore = 0;
   userScore = 0;
   var user_name = user.value;
@@ -158,6 +159,7 @@ function begin() {
 begin ();
 
 document.getElementById('start-game').addEventListener("click", function() {
+  play = 0;
   compScore = 0;
   userScore = 0;
   user.form.reset();
